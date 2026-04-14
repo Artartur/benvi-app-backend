@@ -6,7 +6,7 @@ import {
 } from 'class-validator';
 
 export class CreatePatientDto {
-  @IsDateString({}, { message: 'Esse campo é do tipo texto' })
+  @IsDateString({}, { message: 'Esse campo é do tipo data' })
   @IsNotEmpty({ message: 'Data de aniversário é obrigatório' })
   birthDate: Date;
 

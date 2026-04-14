@@ -39,7 +39,7 @@ export class PatientController {
 
   @Get('id/:id')
   async findById(@Param('id') id: string) {
-    const patient = (await this.patientService.findById(id)) as PatientDocument;
+    const patient = await this.patientService.findById(id);
 
     return formatTimezone(patient);
   }
