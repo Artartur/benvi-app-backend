@@ -1,10 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { Document } from 'src/interfaces/genericDocument';
 
-export type PatientDocument = HydratedDocument<Patient> & {
-  createdAt: Date;
-  updatedAt: Date;
-};
+export type PatientDocument = Document<Patient>;
 
 @Schema({ timestamps: true })
 export class Patient {
