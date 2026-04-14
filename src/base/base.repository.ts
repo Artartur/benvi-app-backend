@@ -23,10 +23,6 @@ export abstract class BaseRepository<T extends Document, CreateDto, UpdateDto> {
     return this.model.findById(id);
   }
 
-  async findOne(filter: QueryFilter<T>): Promise<T | null> {
-    return this.model.findOne(filter);
-  }
-
   async create(data: CreateDto): Promise<T> {
     return this.model.create(data ?? {});
   }

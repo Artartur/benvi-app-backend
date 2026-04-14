@@ -11,17 +11,6 @@ import { CreatePatientDto, UpdatePatientDto } from '../dto/patient.dto';
 export class PatientService {
   constructor(private patientRepository: PatientRepository) {}
 
-  public async findAll(page: number, limit: number): Promise<Patient[]> {
-    return await this.patientRepository.findAll(page, limit);
-  }
-
-  public async findAllInactive(
-    page: number,
-    limit: number,
-  ): Promise<Patient[]> {
-    return await this.patientRepository.findAllInactive(page, limit);
-  }
-
   public async findByCpf(cpf: string): Promise<Patient> {
     const patient = await this.patientRepository.findByCpf(cpf);
 

@@ -24,16 +24,15 @@ export class PatientController {
 
   @Get()
   async findAll(
-    @Query('page') page: number = 1,
-    @Query('limit') limit: number = 10,
-    @Query('isActive') isActive: boolean = true,
+    @Query('page') page = 1,
+    @Query('limit') limit = 10,
+    @Query('isActive') isActive = true,
   ) {
-    const patients = isActive
-      ? await this.patientRepository.findAll(Number(page), Number(limit))
-      : await this.patientRepository.findAllInactive(
-          Number(page),
-          Number(limit),
-        );
+    const patients = await this.patientRepository.findAllByStatus(
+      isActive,
+      Number(page),
+      Number(limit),
+    );
 
     return formatMultipleTimezones(patients);
   }
