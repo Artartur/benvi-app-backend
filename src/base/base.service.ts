@@ -27,7 +27,9 @@ export abstract class BaseService<
 
   async findById(id: string): Promise<TDocument> {
     const doc = await this.repository.findById(id);
+
     if (!doc) throw new NotFoundException(`${this.entityName} não encontrado`);
+
     return doc;
   }
 
@@ -37,7 +39,9 @@ export abstract class BaseService<
 
   async update(id: string, data: TUpdateDto): Promise<TDocument> {
     const doc = await this.repository.update(id, data);
+
     if (!doc) throw new NotFoundException(`${this.entityName} não encontrado`);
+
     return doc;
   }
 

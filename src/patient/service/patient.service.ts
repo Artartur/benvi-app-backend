@@ -18,7 +18,7 @@ export class PatientService extends BaseService<
     super(patientRepository, 'Paciente');
   }
 
-  public async create(patientData: CreatePatientDto): Promise<PatientDocument> {
+  async create(patientData: CreatePatientDto): Promise<PatientDocument> {
     const alreadyExists = await this.patientRepository.findByCpf(
       patientData.cpf,
     );
@@ -28,7 +28,7 @@ export class PatientService extends BaseService<
     return super.create(patientData);
   }
 
-  public async findByCpf(cpf: string): Promise<Patient> {
+  async findByCpf(cpf: string): Promise<Patient> {
     const patient = await this.patientRepository.findByCpf(cpf);
 
     if (!patient) throw new NotFoundException('Paciente não encontrado');
