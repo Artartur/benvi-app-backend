@@ -23,6 +23,10 @@ export class CreatePatientDto {
   name: string;
 
   @IsString({ message: 'Esse campo é do tipo texto' })
+  @IsNotEmpty({ message: 'Telefone é obrigatório' })
+  phoneNumber: string;
+
+  @IsString({ message: 'Esse campo é do tipo texto' })
   @IsNotEmpty({ message: 'Sobrenome é obrigatório' })
   surname: string;
 }
@@ -39,6 +43,10 @@ export class UpdatePatientDto {
   @IsString()
   @IsOptional()
   name?: string;
+
+  @IsString()
+  @IsOptional()
+  phoneNumber?: string;
 
   @IsString()
   @IsOptional()
