@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { DatabaseModule } from './database/database.module';
-import { PatientModule } from './patient/patient.module';
-import { HospitalModule } from './hospital/hospital.module';
+import { PatientModule } from './modules/patient/patient.module';
+import { HospitalModule } from './modules/hospital/hospital.module';
 
 @Module({
   imports: [DatabaseModule, PatientModule, HospitalModule],
