@@ -6,7 +6,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
-import { Address } from 'src/interfaces/address';
+import { Address } from 'src/types/address';
 
 export class CreatePatientDto {
   @ValidateNested()

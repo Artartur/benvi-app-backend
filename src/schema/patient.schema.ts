@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Address } from 'src/interfaces/address';
-import { Document } from 'src/interfaces/genericDocument';
+import { Address } from 'src/types/address';
+import { Document } from 'src/types/genericDocument';
 
 export type PatientDocument = Document<Patient>;
 
