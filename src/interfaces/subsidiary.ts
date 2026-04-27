@@ -1,5 +1,5 @@
 import { IsOptional, IsString } from 'class-validator';
-import { CreateHospitalDto } from 'src/hospital/dto/hospital.dto';
+import { CreateHospitalDto } from 'src/modules/hospital/dto/hospital.dto';
 import { OmitType } from '@nestjs/mapped-types';
 
 export class Subsidiary extends OmitType(CreateHospitalDto, [
